@@ -1,0 +1,21 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Tanmai Donavalli
+  description: Python.
+  license: MIT
+  min_ansible_version: 2.7.5
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+    - xenial
+    - bionic
+  - name: Raspbian
+    versions:
+    - stretch
+  galaxy_tags:
+  - packaging
+  - python
+  github_branch: master
