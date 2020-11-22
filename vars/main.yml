@@ -1,0 +1,5 @@
+---
+python2_package: python
+python2_pip_package: python-pip
+python3_package: python3
+python3_pip_package: python3-pip
