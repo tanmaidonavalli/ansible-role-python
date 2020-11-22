@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars:
+    python2_install: true
+    python2_pip_install: true
+    python3_install: true
+    python3_pip_install: true
+    python_venv_install: true
+  roles:
+    - ansible-role-python
