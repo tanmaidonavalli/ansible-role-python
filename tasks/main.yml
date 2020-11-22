@@ -1,5 +1,6 @@
 ---
-- include: install.yml
-  become: yes
+- import_tasks: packages.yml
   tags:
-  - python
+    - python
+    - python_install
+    - python_virtualenvs
