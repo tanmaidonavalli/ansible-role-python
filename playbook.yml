@@ -1,10 +1,10 @@
 ---
-- hosts: localhost
-  vars:
-    python2_install: true
-    python2_pip_install: true
-    python3_install: true
-    python3_pip_install: true
-    python_venv_install: true
-  roles:
-    - ansible-role-python
+
+- name: python installation
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - name: Install python for ansible from scratch
+      raw: >
+              sudo apt update && sudo apt install -cy python2.7
+      changed_when: false
