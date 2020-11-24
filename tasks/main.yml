@@ -1,6 +1,0 @@
----
-- import_tasks: packages.yml, mysql.yml
-  tags:
-    - python
-    - python_install
-    
