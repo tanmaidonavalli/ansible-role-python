@@ -9,12 +9,14 @@
 
   - name: Download MySQL Community Repo
     shell: wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+    
 
   - name: remove rpm
     shell: yum -y remove mysql-community-release-el7-5.noarch
 
   - name: doqnload rpm
     shell: rpm -ivh mysql-community-release-el7-5.noarch.rpm
+    
   - name: Install MySQL-python, this is required for the task remove anonymous user
     yum: name=MySQL-python state=present
 
@@ -24,3 +26,16 @@
       
   - name: Start MySQL Server and enable it
     service: name=mysqld state=started enabled=yes
+    
+  - name: Download  Repo
+    shell: wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
+  
+  - name: Downlaod python epel
+    shell: rpm -ivh epel-release-latest-5.noarch.rpm
+    
+  - name: 
+    yum: epel-release-6-8.noarch.rpm state=present
+  
+  - name: 
+    shell: yum -y install python-pip:wq    
+   
