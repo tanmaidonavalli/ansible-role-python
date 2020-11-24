@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: true
+  tasks:
+  - name: Install wget package (RedHat based)
+    action: yum name='wget' state=installed
+
+  - name: Download MySQL Community Repo
+    shell: wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
+  - name: remove rpm
+    shell: yum -y remove mysql-community-release-el7-5.noarch
+
+  - name: doqnload rpm
+    shell: rpm -ivh mysql-community-release-el7-5.noarch.rpm
+  - name: Install MySQL-python, this is required for the task remove anonymous user
+    yum: name=MySQL-python state=present
+
+
+  - name: Install MySQL Server
+    yum: name=mysql-server state=present
+      
+  - name: Start MySQL Server and enable it
+    service: name=mysqld state=started enabled=yes
