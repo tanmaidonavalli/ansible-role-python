@@ -1,5 +1,4 @@
 ---
 
-python3_install: false
-python3_pip_install: false
-python3_venv_install: false
+python3_install: true
+python3_pip_install: true
