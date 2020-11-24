@@ -1,14 +1,14 @@
 ---
-- name: Install packages
-  package:
-    name: "{{ item.package }}"
-    state: latest
-  when: "item.condition"
-  with_items:
-    - package: "{{ python3_package }}"
-      condition: "{{ python3_install }}"
-    - package: "{{ python3_pip_package }}"
-      condition: "{{ python3_pip_install }}"
-
-
-
+- name: Install wget package (RedHat based)
+  action: yum name='wget' state=installed
+- name: Download  Repo
+  shell: wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
+  
+- name: Downlaod python epel
+  shell: rpm -ivh epel-release-latest-5.noarch.rpm
+ 
+- name: 
+  yum: epel-release-6-8.noarch.rpm state=present
+  
+- name: 
+  shell: yum -y install python-pip:wq
